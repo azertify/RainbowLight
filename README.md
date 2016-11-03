@@ -9,6 +9,11 @@ Makes your Blynclight a cool fading rainbow
 ## How to contribute
 - Don't
 
+### Contributors
+
+- slord
+- dclarke
+
 ---
 
 **made with :heart: in marlow**
