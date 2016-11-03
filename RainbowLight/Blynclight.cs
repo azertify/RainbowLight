@@ -22,7 +22,7 @@ namespace RainbowLight
         public Blynclight()
         {
             hue = 0.0;
-            val = 1.0;
+            val = 0.0;
             sat = 1.0;
 
             controller = new BlynclightController();
