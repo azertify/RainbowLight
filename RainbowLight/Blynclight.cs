@@ -45,7 +45,7 @@ namespace RainbowLight
             lock (valLock)
             {
                 hue = rand.NextDouble() * 360;
-                val = 0.6; // 0.6 is a nice brightness
+                val = 0.8; // 0.8 is a nice brightness ;)
                 setColor();
             }
         }

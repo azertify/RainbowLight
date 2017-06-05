@@ -13,6 +13,7 @@ namespace RainbowLight
     {
         private const int WH_KEYBOARD_LL = 13;
         private const int WM_KEYDOWN = 0x0100;
+        const int SW_HIDE = 0;
         private LowLevelKeyboardProc _proc;
         private IntPtr _hookID = IntPtr.Zero;
 
@@ -21,6 +22,8 @@ namespace RainbowLight
         {
             this.light = light;
             _proc = HookCallback;
+
+            ShowWindow(GetConsoleWindow(), SW_HIDE);
 
             _hookID = SetHook(_proc);
             Application.Run();
@@ -59,5 +62,12 @@ namespace RainbowLight
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr GetModuleHandle(string lpModuleName);
+
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
+
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
     }
 }
